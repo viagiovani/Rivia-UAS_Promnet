@@ -46,7 +46,7 @@ class C_Motor extends CI_Controller {
 	public function penjualan(){
 
 		$this->curl->http_header("X-Nim", "1700424");
-		$data['jual'] = json_decode($this->curl->simple_get($this->API.'/penjualan'));
+		$data['jual'] = json_decode($this->curl->simple_get($this->API.'/penjualan'))->data->terjual;
 		//$this->curl->debug();
 
 		$this->curl->http_header("X-Nim", "1700424");

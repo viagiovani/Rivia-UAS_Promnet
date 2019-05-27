@@ -66,14 +66,25 @@
     <br><br>
     <table>
         <tr>
-            <th>nim_sales</th>
-            <th>nama_sales</th>
+            <th>tipe_motor</th>
+            <th>harga_motor</th>
+            <th>tenor</th>
+            <th>uang_muka</th>
+            <th>cicilan_pokok</th>
+            <th>cicilan_bunga</th>
+            <th>cicilan_total</th>
         </tr>
-        
-        <tr>
-            <td><?= $jual->data->nim_sales?></td>
-            <td><?= $jual->data->nama_sales?></td>
-        </tr>
+        <?php foreach ($jual as $key) { ?>
+            <tr>
+                <td><?= $key->tipe_motor?></td>
+                <td><?= $key->harga_motor?></td>
+                <td><?= $key->tenor?></td>
+                <td><?= $key->uang_muka?></td>
+                <td><?= $key->cicilan_pokok?></td>
+                <td><?= $key->cicilan_bunga?></td>
+                <td><?= $key->cicilan_total?></td>
+            </tr>
+        <?php }?>
         
     
     </table>
