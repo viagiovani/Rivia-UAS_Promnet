@@ -79,13 +79,11 @@ class C_Motor extends CI_Controller {
 		$this->curl->http_header("X-Nim", "1700424");
 		$tenor = json_decode($this->curl->simple_get($this->API.'/cicil'))->data;
 		foreach ($tenor as $key ) {
-			if ($key->id_tenor == $cicil) {
+			if ($key->id_cicil == $cicil) {
 				$bunga = $key->bunga;
 			}
 		}
 
-
-		var_dump($harga);
 
 		$data = array(
 			'id_motor'      =>  $mtr,
@@ -101,13 +99,14 @@ class C_Motor extends CI_Controller {
 
 		if($insert)
 		{
-			$this->session->set_flashdata('hasil','Insert Data Berhasil');
+			echo "data berhasil ditambahkan";
 		}else
 		{
+			
 			$this->session->set_flashdata('hasil','Insert Data Gagal');
 		} 
 
-		redirect('C_Motor');
+		//redirect('C_Motor');
 
 	}
 
